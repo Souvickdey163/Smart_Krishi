@@ -14,6 +14,10 @@ app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:5174'] }));
 app.use(express.json({ limit: '200mb' }));
 app.use(express.urlencoded({ limit: '200mb', extended: true }));
 
+app.get("/", (req, res) => {
+  res.send("Smart Krishi Backend Running ✅");
+});
+
 // ─── In-Memory Cache ──────────────────────────────────────────────
 const cache = {};
 const CACHE_TTL = 5 * 60 * 1000; // 5 minutes
